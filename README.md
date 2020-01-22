@@ -1,5 +1,7 @@
 # Ticket-Assignment-Automation
 
+
+
 Eliminate manual intervention in ticket creation 
  - Raise a ticket based on the complaint mail 
  - If the details are incomplete (e.g. customer id is missing), send a mail to customer asking for missing details. 
