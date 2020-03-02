@@ -1,5 +1,5 @@
 import nltk, re, heapq
-text = '''"Hi I am Sam, Recently I bought a new Air Quality sensor   	module from you! Suddenly GPRS	of   	the module is not working properly! please help me!"'''
+text = '''"Hi I am Sam, Recently I bought a new Air Quality sensor   	module support from you! Suddenly GPRS	of   	the module is not working properly! please help me!"'''
 
 
 
