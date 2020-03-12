@@ -48,16 +48,18 @@ def extractSummary(text):
     return(summary)
 
 def gensimSummary(text):
-	return summarize(text)
+	return summarize(text, ratio = 0.9)
+	
+t = '''Challenges in natural language processing frequently involve speech recognition. natural language understanding, natural language generation (frequently from formal, machine-readable logical forms). connecting language and machine perception, dialog systems. or some combination thereof.'''
+'''Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!'''
+print("--:Gensim Summary:--")
+print(gensimSummary(t))
+print("------------------------------------------------------------------------------------------------------------------------\n")
 
-print(
-gensimSummary('''Rice Pudding - Poem by Alan Alexander Milne What is the matter with Mary Jane? She's crying with all her might and main, And she won't eat her dinner - rice pudding again - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her dolls and a daisy-chain, And a book about animals - all in vain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well, and she hasn't a pain; But, look at her, now she's beginning again! - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her sweets and a ride in the train, And I've begged her to stop for a bit and explain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well and she hasn't a pain, And it's lovely rice pudding for dinner again! What is the matter with Mary Jane?''')
-)
+print("--:Gensim Keyword:--")
+print(keywords(t,ratio = 1, split  = True))
+print("------------------------------------------------------------------------------------------------------------------------\n")
 
-print()
-
-print(keywords(gensimSummary('''Rice Pudding - Poem by Alan Alexander Milne What is the matter with Mary Jane? She's crying with all her might and main, And she won't eat her dinner - rice pudding again - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her dolls and a daisy-chain, And a book about animals - all in vain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well, and she hasn't a pain; But, look at her, now she's beginning again! - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her sweets and a ride in the train, And I've begged her to stop for a bit and explain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well and she hasn't a pain, And it's lovely rice pudding for dinner again! What is the matter with Mary Jane?'''),ratio = 1, split  = True))
-
-print(
-extractSummary("Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!")
-)
+print("--:Our NLP Extract Summary:--")
+print(extractSummary(t))
+print("------------------------------------------------------------------------------------------------------------------------\n")
