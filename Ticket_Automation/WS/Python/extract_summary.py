@@ -1,5 +1,9 @@
 '''Summary Extraction'''
-import nltk, re, heapq, string
+import nltk, re, heapq, string, gensim
+
+from gensim.summarization.summarizer import summarize
+from gensim.summarization import keywords
+
 
 def extractSummary(text):
     text = str(text) # ensoure that text convert to text....
@@ -42,3 +46,18 @@ def extractSummary(text):
     summary_sentences = heapq.nlargest(sentence_limit+1, sentence_scores, key=sentence_scores.get) # join the sentence heap of sentence score....
     summary = ' '.join(summary_sentences)
     return(summary)
+
+def gensimSummary(text):
+	return summarize(text)
+
+print(
+gensimSummary('''Rice Pudding - Poem by Alan Alexander Milne What is the matter with Mary Jane? She's crying with all her might and main, And she won't eat her dinner - rice pudding again - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her dolls and a daisy-chain, And a book about animals - all in vain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well, and she hasn't a pain; But, look at her, now she's beginning again! - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her sweets and a ride in the train, And I've begged her to stop for a bit and explain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well and she hasn't a pain, And it's lovely rice pudding for dinner again! What is the matter with Mary Jane?''')
+)
+
+print()
+
+print(keywords(gensimSummary('''Rice Pudding - Poem by Alan Alexander Milne What is the matter with Mary Jane? She's crying with all her might and main, And she won't eat her dinner - rice pudding again - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her dolls and a daisy-chain, And a book about animals - all in vain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well, and she hasn't a pain; But, look at her, now she's beginning again! - What is the matter with Mary Jane? What is the matter with Mary Jane? I've promised her sweets and a ride in the train, And I've begged her to stop for a bit and explain - What is the matter with Mary Jane? What is the matter with Mary Jane? She's perfectly well and she hasn't a pain, And it's lovely rice pudding for dinner again! What is the matter with Mary Jane?'''),ratio = 1, split  = True))
+
+print(
+extractSummary("Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!")
+)

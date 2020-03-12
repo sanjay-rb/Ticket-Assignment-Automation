@@ -105,7 +105,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Set Gmail email account" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign DisplayName="Set Gmail email account" sap:VirtualizedContainerService.HintSize="492,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
           </Assign.To>
@@ -113,22 +113,21 @@
             <InArgument x:TypeArguments="x:String">sanjaybabu618@gmail.com</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:GetPassword DisplayName="Get password" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlEmm8Av2RkSAFq9jb8mPYAAAAAACAAAAAAAQZgAAAAEAACAAAAA/3QIBedtTLCa/Kslm1velWWLSvt4+g+nTsKyS2OU2sAAAAAAOgAAAAAIAACAAAABqdoiosLV80LbsBAZ7dGiYhXLfRS1Qj1MGoI1xslq9dCAAAAD9i7M5ZDe7cCliBnBSCwAMfI7EHmxiu9wA+0E129Cs0kAAAAB/BWOGpFATC+y5a5eKMzX4q3L3SX1jw6BsM6iPg6VnhN3zU6N/YLbASFUdUHAG1xmZ8RlzsKNNHSWbtju4fNlT" Result="[password]" />
-        <ui:Comment sap:VirtualizedContainerService.HintSize="483.2,75.2" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Read one new email from a Gmail account and mark it as read" />
-        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP mail messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[listGetGmail]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
-        <If Condition="[listGetGmail IsNot Nothing]" sap:VirtualizedContainerService.HintSize="483.2,395.2" sap2010:WorkflowViewState.IdRef="If_1">
+        <ui:GetPassword DisplayName="Get password" sap:VirtualizedContainerService.HintSize="492,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlEmm8Av2RkSAFq9jb8mPYAAAAAACAAAAAAAQZgAAAAEAACAAAAA/3QIBedtTLCa/Kslm1velWWLSvt4+g+nTsKyS2OU2sAAAAAAOgAAAAAIAACAAAABqdoiosLV80LbsBAZ7dGiYhXLfRS1Qj1MGoI1xslq9dCAAAAD9i7M5ZDe7cCliBnBSCwAMfI7EHmxiu9wA+0E129Cs0kAAAAB/BWOGpFATC+y5a5eKMzX4q3L3SX1jw6BsM6iPg6VnhN3zU6N/YLbASFUdUHAG1xmZ8RlzsKNNHSWbtju4fNlT" Result="[password]" />
+        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP mail messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="492,22.4" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[listGetGmail]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
+        <If Condition="[listGetGmail IsNot Nothing]" sap:VirtualizedContainerService.HintSize="492,632" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="304,245.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence sap:VirtualizedContainerService.HintSize="348,482.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For each&lt;object&gt;" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listGetGmail]">
+              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="306.4,289.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listGetGmail]">
                 <ui:ForEach.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction x:TypeArguments="snm:MailMessage">
                     <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                      <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
                     </ActivityAction.Argument>
                     <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="271.2,155.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
@@ -140,14 +139,8 @@
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="306.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="snm:MailMessage">[mailMessage]</OutArgument>
                 </Assign.To>
@@ -203,7 +196,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">550,428.9 580,428.9 580,188.42 400,188.42</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="560.8,423.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -219,7 +212,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke workflow file" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process_Email.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Body">[mailMessage.Subject]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Body">[mailMessage.Headers("PlainText")]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
