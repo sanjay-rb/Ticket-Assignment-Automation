@@ -50,14 +50,14 @@ def extractSummary(text):
 def gensimSummary(text):
 	return summarize(text, ratio = 0.9)
 	
-t = '''Challenges in natural language processing frequently involve speech recognition. natural language understanding, natural language generation (frequently from formal, machine-readable logical forms). connecting language and machine perception, dialog systems. or some combination thereof.'''
-'''Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!'''
+'''Challenges in natural language processing frequently involve speech recognition. natural language understanding, natural language generation (frequently from formal, machine-readable logical forms). connecting language and machine perception, dialog systems. or some combination thereof.'''
+t = '''Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!'''
 print("--:Gensim Summary:--")
 print(gensimSummary(t))
 print("------------------------------------------------------------------------------------------------------------------------\n")
 
 print("--:Gensim Keyword:--")
-print(keywords(t,ratio = 1, split  = True))
+print(keywords(t,ratio = 0.5, scores  = True))
 print("------------------------------------------------------------------------------------------------------------------------\n")
 
 print("--:Our NLP Extract Summary:--")
