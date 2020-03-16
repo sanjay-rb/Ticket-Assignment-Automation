@@ -59,6 +59,25 @@
     },
     {
       "Package": {
+        "Id": "UiPath.Python.Activities",
+        "Version": "1.1.6863.33404"
+      },
+      "Assemblies": [
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.Activities.Design.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.Activities.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x64/Python.Runtime.35.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x64/Python.Runtime.36.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.27.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.33.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.34.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.35.dll",
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.36.dll"
+      ],
+      "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404"
+    },
+    {
+      "Package": {
         "Id": "UiPath.System.Activities",
         "Version": "19.8.0"
       },
@@ -129,22 +148,13 @@
     },
     {
       "Package": {
-        "Id": "UiPath.Python.Activities",
-        "Version": "1.1.6863.33404"
+        "Id": "UiPathTeam.DatatablesComparison.Activities",
+        "Version": "1.0.9"
       },
       "Assemblies": [
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.Activities.Design.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.Activities.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/UiPath.Python.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x64/Python.Runtime.35.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x64/Python.Runtime.36.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.27.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.33.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.34.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.35.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404\\lib/net452/x86/Python.Runtime.36.dll"
+        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipathteam.datatablescomparison.activities/1.0.9\\lib/DataTablesComparison.dll"
       ],
-      "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.python.activities/1.1.6863.33404"
+      "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipathteam.datatablescomparison.activities/1.0.9"
     }
   ],
   "Conflicts": [],
@@ -436,6 +446,11 @@
     "UiPath.Vision": {
       "Id": "UiPath.Vision",
       "Version": "1.7.0",
+      "Dependencies": []
+    },
+    "UiPathTeam.DatatablesComparison.Activities": {
+      "Id": "UiPathTeam.DatatablesComparison.Activities",
+      "Version": "1.0.9",
       "Dependencies": []
     }
   }

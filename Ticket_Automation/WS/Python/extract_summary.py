@@ -1,7 +1,7 @@
 '''Summary Extraction'''
 import nltk, re, heapq, string, gensim
 
-from gensim.summarization.summarizer import summarize
+from gensim.summarization import summarize
 from gensim.summarization import keywords
 
 
@@ -48,18 +48,24 @@ def extractSummary(text):
     return(summary)
 
 def gensimSummary(text):
-	return summarize(text, ratio = 0.9)
+	return summarize(text, word_count = 100)
+
+def getSummary(text):
+	try:
+		if len(gensimSummary(text)) != 0:
+			return gensimSummary(text)
+		return extractSummary(text)
+	except:
+		return extractSummary(text)
+		
+def getKeywords(text):
+	keys = ""
+	for k in keywords(text,ratio = 1, split = True):
+		keys+= k + "#"
+	return keys
 	
-'''Challenges in natural language processing frequently involve speech recognition. natural language understanding, natural language generation (frequently from formal, machine-readable logical forms). connecting language and machine perception, dialog systems. or some combination thereof.'''
-t = '''Hi I am Sam, Recently I bought a new Air Quality sensor module support from you! Suddenly GPRS of the module is not working properly! please help me!'''
-print("--:Gensim Summary:--")
-print(gensimSummary(t))
-print("------------------------------------------------------------------------------------------------------------------------\n")
+t = '''router POS light gets blinking could you send a service person to this locationfrequent disconnection'''
+	
+print(getKeywords(t))
 
-print("--:Gensim Keyword:--")
-print(keywords(t,ratio = 0.5, scores  = True))
-print("------------------------------------------------------------------------------------------------------------------------\n")
-
-print("--:Our NLP Extract Summary:--")
-print(extractSummary(t))
-print("------------------------------------------------------------------------------------------------------------------------\n")
+print(getSummary(t))

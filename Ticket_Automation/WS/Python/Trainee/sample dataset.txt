@@ -1,0 +1,40 @@
+Billing: - I have been charged the incorrect amount for my internet usage. My contract states I have an allowance per month, but I am being charged daily for each separate connection to the internet.
+
+Keywords:-
+
+Not receiving bills
+temporary disconnection
+incorrect billing
+charged daily
+separate connection
+others
+
+
+Payment:
+unable to pay online
+payment done but service not restored
+payment done but not updated
+others
+
+
+Services:
+not able to use the internet
+slow speed
+router configuration
+REG blinking
+los light - router POS light gets blinking could you send a service person to this location
+frequent disconnection
+
+connection issue  -  The problem began on June 12th, when my Internet went down for several days. I established that the problem was not my computer or the wireless connection, and then contacted you about the service interruption. You claimed you would send a repairman right away. No repairman was sent for another two days.
+
+PON blinking
+inside shifting
+outside shifting
+others
+
+
+Wireless:
+slow speed
+connection issue
+device not reachable
+others

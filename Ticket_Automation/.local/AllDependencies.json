@@ -700,6 +700,15 @@
           "lib/net452/UiPath.Vision.Core.dll": {},
           "lib/net452/UiPath.Vision.dll": {}
         }
+      },
+      "UiPathTeam.DatatablesComparison.Activities/1.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/DataTablesComparison.dll": {}
+        }
       }
     }
   },
@@ -1492,6 +1501,17 @@
         "uipath.vision.1.7.0.nupkg.sha512",
         "uipath.vision.nuspec"
       ]
+    },
+    "UiPathTeam.DatatablesComparison.Activities/1.0.9": {
+      "sha512": "FwnilI3W6odM1eU+xpyyq8v/Gfl0m0AXGyA47cLeV77a0B44YWRIpP8rEnYgSakUDOoitL7RVdu1zx0XlnqLng==",
+      "type": "package",
+      "path": "uipathteam.datatablescomparison.activities/1.0.9",
+      "files": [
+        ".nupkg.metadata",
+        "lib/DataTablesComparison.dll",
+        "uipathteam.datatablescomparison.activities.1.0.9.nupkg.sha512",
+        "uipathteam.datatablescomparison.activities.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1502,7 +1522,8 @@
       "UiPath.Mail.Activities >= 1.6.0 <= 1.6.0",
       "UiPath.Python.Activities >= 1.1.6863.33404 <= 1.1.6863.33404",
       "UiPath.System.Activities >= 19.8.0 <= 19.8.0",
-      "UiPath.UIAutomation.Activities >= 19.8.0-ce <= 19.8.0-ce"
+      "UiPath.UIAutomation.Activities >= 19.8.0-ce <= 19.8.0-ce",
+      "UiPathTeam.DatatablesComparison.Activities >= 1.0.9 <= 1.0.9"
     ]
   },
   "packageFolders": {
@@ -1512,9 +1533,9 @@
     "restore": {
       "projectUniqueName": "Ticket_Automation",
       "projectName": "Ticket_Automation",
-      "projectPath": "F:\\IMPORTANT\\Final Year Project\\Ticket-Assignment-Automation-\\Ticket_Automation\\.local",
+      "projectPath": "F:\\IMPORTANT\\Final Year Project\\Ticket-Assignment-Automation\\Ticket_Automation\\.local",
       "packagesPath": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\",
-      "outputPath": "F:\\IMPORTANT\\Final Year Project\\Ticket-Assignment-Automation-\\Ticket_Automation\\.local"
+      "outputPath": "F:\\IMPORTANT\\Final Year Project\\Ticket-Assignment-Automation\\Ticket_Automation\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1548,6 +1569,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[19.8.0-ce, 19.8.0-ce]"
+          },
+          "UiPathTeam.DatatablesComparison.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.9, 1.0.9]"
           }
         }
       }
