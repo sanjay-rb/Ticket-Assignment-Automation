@@ -2,22 +2,6 @@
   "Packages": [
     {
       "Package": {
-        "Id": "FirebaseConnector",
-        "Version": "1.1.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\firebaseconnector/1.1.0\\lib/FirebaseConnectorActivity.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\google.apis/1.38.0\\lib/net45/Google.Apis.PlatformServices.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\google.apis/1.38.0\\lib/net45/Google.Apis.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\google.apis.auth/1.38.0\\lib/net45/Google.Apis.Auth.PlatformServices.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\google.apis.auth/1.38.0\\lib/net45/Google.Apis.Auth.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\google.apis.core/1.38.0\\lib/net45/Google.Apis.Core.dll",
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll"
-      ],
-      "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\firebaseconnector/1.1.0"
-    },
-    {
-      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.6.3"
       },
@@ -145,16 +129,6 @@
         "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.vision/1.7.0\\lib/net452/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipath.uiautomation.activities/19.8.0-ce"
-    },
-    {
-      "Package": {
-        "Id": "UiPathTeam.DatatablesComparison.Activities",
-        "Version": "1.0.9"
-      },
-      "Assemblies": [
-        "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipathteam.datatablescomparison.activities/1.0.9\\lib/DataTablesComparison.dll"
-      ],
-      "Path": "C:\\Users\\Sanjay Babu\\.nuget\\packages\\uipathteam.datatablescomparison.activities/1.0.9"
     }
   ],
   "Conflicts": [],
@@ -193,58 +167,6 @@
       "Id": "Extended.Wpf.Toolkit",
       "Version": "2.8.0",
       "Dependencies": []
-    },
-    "FirebaseConnector": {
-      "Id": "FirebaseConnector",
-      "Version": "1.1.0",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis.Auth",
-          "Item2": "[1.38.0, )"
-        },
-        {
-          "Item1": "Newtonsoft.Json",
-          "Item2": "[9.0.1, )"
-        }
-      ]
-    },
-    "Google.Apis": {
-      "Id": "Google.Apis",
-      "Version": "1.38.0",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis.Core",
-          "Item2": "[1.38.0, )"
-        },
-        {
-          "Item1": "Newtonsoft.Json",
-          "Item2": "[10.0.2, )"
-        }
-      ]
-    },
-    "Google.Apis.Auth": {
-      "Id": "Google.Apis.Auth",
-      "Version": "1.38.0",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis.Core",
-          "Item2": "[1.38.0, )"
-        },
-        {
-          "Item1": "Google.Apis",
-          "Item2": "[1.38.0, )"
-        }
-      ]
-    },
-    "Google.Apis.Core": {
-      "Id": "Google.Apis.Core",
-      "Version": "1.38.0",
-      "Dependencies": [
-        {
-          "Item1": "Newtonsoft.Json",
-          "Item2": "[10.0.2, )"
-        }
-      ]
     },
     "Humanizer.Core": {
       "Id": "Humanizer.Core",
@@ -446,11 +368,6 @@
     "UiPath.Vision": {
       "Id": "UiPath.Vision",
       "Version": "1.7.0",
-      "Dependencies": []
-    },
-    "UiPathTeam.DatatablesComparison.Activities": {
-      "Id": "UiPathTeam.DatatablesComparison.Activities",
-      "Version": "1.0.9",
       "Dependencies": []
     }
   }

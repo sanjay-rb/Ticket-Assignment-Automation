@@ -64,7 +64,7 @@ def getKeywords(text):
 		keys+= k + "#"
 	return keys
 	
-t = '''router POS light gets blinking could you send a service person to this locationfrequent disconnection'''
+t = '''HI I am Prathvik and I am a current user of your product. Recently I was trying to pay my bill but i didn't pay because it was showing for higher billing amounts. I ask you to please resolve my issue as soon as possible.'''
 	
 print(getKeywords(t))
 

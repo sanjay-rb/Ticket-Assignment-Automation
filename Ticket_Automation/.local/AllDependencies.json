@@ -103,68 +103,6 @@
           }
         }
       },
-      "FirebaseConnector/1.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Auth": "1.38.0",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/FirebaseConnectorActivity.dll": {}
-        }
-      },
-      "Google.Apis/1.38.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.38.0",
-          "Newtonsoft.Json": "10.0.2"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Apis.PlatformServices.dll": {},
-          "lib/net45/Google.Apis.dll": {}
-        }
-      },
-      "Google.Apis.Auth/1.38.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.38.0",
-          "Google.Apis.Core": "1.38.0"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Apis.Auth.PlatformServices.dll": {},
-          "lib/net45/Google.Apis.Auth.dll": {}
-        }
-      },
-      "Google.Apis.Core/1.38.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.2"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Apis.Core.dll": {}
-        }
-      },
       "Humanizer.Core/2.4.2": {
         "type": "package",
         "compile": {
@@ -700,15 +638,6 @@
           "lib/net452/UiPath.Vision.Core.dll": {},
           "lib/net452/UiPath.Vision.dll": {}
         }
-      },
-      "UiPathTeam.DatatablesComparison.Activities/1.0.9": {
-        "type": "package",
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/DataTablesComparison.dll": {}
-        }
       }
     }
   },
@@ -817,81 +746,6 @@
         "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll",
         "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll",
         "tools/install.ps1"
-      ]
-    },
-    "FirebaseConnector/1.1.0": {
-      "sha512": "oDu6U8GqSXDg28EzkraZyJOE3lFGLQBSikWBXB3VkLRimiVCTGIE2rGMJSQlOqwq9DUgnfhsvCInDJ6J9ikW/A==",
-      "type": "package",
-      "path": "firebaseconnector/1.1.0",
-      "files": [
-        ".nupkg.metadata",
-        "firebaseconnector.1.1.0.nupkg.sha512",
-        "firebaseconnector.nuspec",
-        "lib/FirebaseConnectorActivity.dll"
-      ]
-    },
-    "Google.Apis/1.38.0": {
-      "sha512": "sDcc3qVHkgQfmrW4HFPiRs9EXf8ohj7nS6QMKRirY8gtKOtv7zAGJldOxRW07soh9O476H711qPRt+mddiOZPg==",
-      "type": "package",
-      "path": "google.apis/1.38.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "google.apis.1.38.0.nupkg.sha512",
-        "google.apis.nuspec",
-        "lib/net45/Google.Apis.PlatformServices.dll",
-        "lib/net45/Google.Apis.dll",
-        "lib/net45/Google.Apis.pdb",
-        "lib/net45/Google.Apis.xml",
-        "lib/netstandard1.3/Google.Apis.dll",
-        "lib/netstandard1.3/Google.Apis.pdb",
-        "lib/netstandard1.3/Google.Apis.xml",
-        "lib/netstandard2.0/Google.Apis.dll",
-        "lib/netstandard2.0/Google.Apis.pdb",
-        "lib/netstandard2.0/Google.Apis.xml"
-      ]
-    },
-    "Google.Apis.Auth/1.38.0": {
-      "sha512": "OJXWXIFTNkmlYsiEdralgYNKS0qMsFFRR4J2si1BWWlb3VsSIvQwci5w9yF4cvkX+eP7qu9oh1+GLNVjkCOm6w==",
-      "type": "package",
-      "path": "google.apis.auth/1.38.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "google.apis.auth.1.38.0.nupkg.sha512",
-        "google.apis.auth.nuspec",
-        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
-        "lib/net45/Google.Apis.Auth.dll",
-        "lib/net45/Google.Apis.Auth.pdb",
-        "lib/net45/Google.Apis.Auth.xml",
-        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
-        "lib/netstandard1.3/Google.Apis.Auth.dll",
-        "lib/netstandard1.3/Google.Apis.Auth.pdb",
-        "lib/netstandard1.3/Google.Apis.Auth.xml",
-        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
-        "lib/netstandard2.0/Google.Apis.Auth.dll",
-        "lib/netstandard2.0/Google.Apis.Auth.pdb",
-        "lib/netstandard2.0/Google.Apis.Auth.xml"
-      ]
-    },
-    "Google.Apis.Core/1.38.0": {
-      "sha512": "0AhG8lpdjaEXCkKyI6A7U5BeGRZSYMMdJ+eYZR3bvnA4ruXmCvBKsKhvKWh7RZmeTlxMImhBDGwGAQx/g1Q79A==",
-      "type": "package",
-      "path": "google.apis.core/1.38.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "google.apis.core.1.38.0.nupkg.sha512",
-        "google.apis.core.nuspec",
-        "lib/net45/Google.Apis.Core.dll",
-        "lib/net45/Google.Apis.Core.pdb",
-        "lib/net45/Google.Apis.Core.xml",
-        "lib/netstandard1.3/Google.Apis.Core.dll",
-        "lib/netstandard1.3/Google.Apis.Core.pdb",
-        "lib/netstandard1.3/Google.Apis.Core.xml",
-        "lib/netstandard2.0/Google.Apis.Core.dll",
-        "lib/netstandard2.0/Google.Apis.Core.pdb",
-        "lib/netstandard2.0/Google.Apis.Core.xml"
       ]
     },
     "Humanizer.Core/2.4.2": {
@@ -1501,29 +1355,16 @@
         "uipath.vision.1.7.0.nupkg.sha512",
         "uipath.vision.nuspec"
       ]
-    },
-    "UiPathTeam.DatatablesComparison.Activities/1.0.9": {
-      "sha512": "FwnilI3W6odM1eU+xpyyq8v/Gfl0m0AXGyA47cLeV77a0B44YWRIpP8rEnYgSakUDOoitL7RVdu1zx0XlnqLng==",
-      "type": "package",
-      "path": "uipathteam.datatablescomparison.activities/1.0.9",
-      "files": [
-        ".nupkg.metadata",
-        "lib/DataTablesComparison.dll",
-        "uipathteam.datatablescomparison.activities.1.0.9.nupkg.sha512",
-        "uipathteam.datatablescomparison.activities.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
-      "FirebaseConnector >= 1.1.0 <= 1.1.0",
       "UiPath.Excel.Activities >= 2.6.3 <= 2.6.3",
       "UiPath.Mail.Activities >= 1.6.0 <= 1.6.0",
       "UiPath.Python.Activities >= 1.1.6863.33404 <= 1.1.6863.33404",
       "UiPath.System.Activities >= 19.8.0 <= 19.8.0",
-      "UiPath.UIAutomation.Activities >= 19.8.0-ce <= 19.8.0-ce",
-      "UiPathTeam.DatatablesComparison.Activities >= 1.0.9 <= 1.0.9"
+      "UiPath.UIAutomation.Activities >= 19.8.0-ce <= 19.8.0-ce"
     ]
   },
   "packageFolders": {
@@ -1540,11 +1381,6 @@
     "frameworks": {
       "net461": {
         "dependencies": {
-          "FirebaseConnector": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.1.0, 1.1.0]"
-          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -1569,11 +1405,6 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[19.8.0-ce, 19.8.0-ce]"
-          },
-          "UiPathTeam.DatatablesComparison.Activities": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.0.9, 1.0.9]"
           }
         }
       }
