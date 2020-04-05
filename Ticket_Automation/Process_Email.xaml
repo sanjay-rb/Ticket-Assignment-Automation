@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="Body" Type="InArgument(x:String)" />
     <x:Property Name="Customer" Type="InArgument(x:String)" />
+    <x:Property Name="TICKET" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -123,6 +124,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="summary">[result_summary]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Customer">[Customer]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Body">[Body]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="TICKET">[TICKET]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

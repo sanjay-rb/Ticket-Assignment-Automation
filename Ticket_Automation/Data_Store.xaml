@@ -4,11 +4,12 @@
     <x:Property Name="keywords" Type="InArgument(x:String)" />
     <x:Property Name="Customer" Type="InArgument(x:String)" />
     <x:Property Name="Body" Type="InArgument(x:String)" />
+    <x:Property Name="TICKET" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>291.2,348</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>291.2,308</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_Store_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -82,7 +83,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;h1&gt;This is the query:&lt;/h1&gt;&lt;center&gt;&lt;div&gt;&quot;+Body+&quot;&lt;/div&gt;&lt;/center&gt;&lt;h1&gt;By Customer:&lt;/h1&gt;&lt;center&gt;&lt;div&gt;&quot;+Customer+&quot;&lt;/div&gt;&lt;/center&gt;&lt;h6 style='color:green'&gt;This is auto generated html template mail don't replay back.&lt;/h6&gt;&lt;/html&gt;&quot;]" DisplayName="Sending Details to Support team" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;HelpDesk&quot; + keywords]" To="ramshankaran13@gmail.com">
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;h1&gt;This is the query with ticket ID #[&quot;+TICKET.ToString+&quot;]:&lt;/h1&gt;&lt;center&gt;&lt;div&gt;&quot;+Body+&quot;&lt;/div&gt;&lt;/center&gt;&lt;h1&gt;By Customer:&lt;/h1&gt;&lt;center&gt;&lt;div&gt;&quot;+Customer+&quot;&lt;/div&gt;&lt;/center&gt;&lt;h6 style='color:green'&gt;This is auto generated html template mail don't replay back.&lt;/h6&gt;&lt;/html&gt;&quot;]" DisplayName="Sending Details to Support team" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;HelpDesk&quot; + keywords]" To="ramshankaran13@gmail.com">
           <ui:SendMail.Files>
             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
           </ui:SendMail.Files>
@@ -119,7 +120,7 @@
                       </ActivityAction.Argument>
                       <If Condition="[row(0).ToString.Equals(selected_key)]" DisplayName="Find Expert List" sap:VirtualizedContainerService.HintSize="483.2,296" sap2010:WorkflowViewState.IdRef="If_4">
                         <If.Then>
-                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;center&gt;&lt;h1&gt;Your Queries is verified!&lt;/h1&gt;&lt;/center&gt;&lt;h2&gt;Our special person to help you: &quot;+row(1).ToString+&quot;&lt;/h2&gt;&lt;h6 style='color:green'&gt;This is auto generated html template mail don't replay back.&lt;/h6&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Auto Mail From HelpDesk" To="[Customer]">
+                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;center&gt;&lt;h1&gt;Your Query with Ticket ID#[&quot;+TICKET.ToString+&quot;] is verified!&lt;/h1&gt;&lt;/center&gt;&lt;h2&gt;Our special person to help you: &quot;+row(1).ToString+&quot;&lt;/h2&gt;&lt;h6 style='color:green'&gt;This is auto generated html template mail don't replay back.&lt;/h6&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Auto Mail From HelpDesk" To="[Customer]">
                             <ui:SendMail.Files>
                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                             </ui:SendMail.Files>
