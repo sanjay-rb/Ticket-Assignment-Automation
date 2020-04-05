@@ -197,12 +197,7 @@
                     <InArgument x:TypeArguments="x:Int32">[ticket+1]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Your Ticket with an ID #[&quot;+ticket.ToString+&quot;] has been raised!&quot;]" To="[mailMessage.From.ToString]">
-                  <ui:SendMail.Body>
-                    <InArgument x:TypeArguments="x:String">
-                      <Literal x:TypeArguments="x:String" Value="" />
-                    </InArgument>
-                  </ui:SendMail.Body>
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;body style = &quot;&quot;background-image:url('https://github.com/sanjaysanju618/Ticket-Assignment-Automation/blob/master/Ticket_Automation/WS/bg.png?raw=true');background-attachment: fixed;&quot;&quot; bgcolor='#D3D3D3'&gt;&lt;div style='box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px;background-color:white; border : solid; margin : 50px; padding : 20px;'&gt;&lt;h2&gt;Your ticket With an ID#[&quot;+ticket.ToString+&quot;] has been raised.&lt;/h2&lt;hr&gt;&lt;div style='text-align:left' align = 'center'&gt;&lt;p&gt;&lt;b&gt;Hello Customer,&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Your query mail Is read By our support team And we would Like To acknowledge that we have received your request And a ticket has been created With an ID #[&quot;+ticket.ToString+&quot;]. One Of our representative will be reviewing your issue And it will be solved With In 1 hour&lt;/p&gt;&lt;p&gt;&lt;b&gt;Thank you&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;h5&gt;This Is auto generated mail so kindly dont replay For this mail.&lt;/h5&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Your Ticket with an ID #[&quot;+ticket.ToString+&quot;] has been raised!&quot;]" To="[mailMessage.From.ToString]">
                   <ui:SendMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendMail.Files>
