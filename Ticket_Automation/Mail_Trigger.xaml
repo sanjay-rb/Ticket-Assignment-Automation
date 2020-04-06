@@ -181,15 +181,15 @@
                   <av:PointCollection x:Key="ConnectorLocation">550,428.9 580,428.9 580,168.42 400,168.42</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="375.2,672" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="794.4,914.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;BODY OF MAIL   ---   &quot;+mailMessage.Headers(&quot;PlainText&quot;)]" />
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;FROM ADDRESS   ---   &quot;+mailMessage.From.ToString]" />
-                <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="752.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;BODY OF MAIL   ---   &quot;+mailMessage.Headers(&quot;PlainText&quot;)]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="752.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;FROM ADDRESS   ---   &quot;+mailMessage.From.ToString]" />
+                <Assign sap:VirtualizedContainerService.HintSize="752.8,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[ticket]</OutArgument>
                   </Assign.To>
@@ -197,18 +197,36 @@
                     <InArgument x:TypeArguments="x:Int32">[ticket+1]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;body style = &quot;&quot;background-image:url('https://github.com/sanjaysanju618/Ticket-Assignment-Automation/blob/master/Ticket_Automation/WS/bg.png?raw=true');background-attachment: fixed;&quot;&quot; bgcolor='#D3D3D3'&gt;&lt;div style='box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px;background-color:white; border : solid; margin : 50px; padding : 20px;'&gt;&lt;h2&gt;Your ticket With an ID#[&quot;+ticket.ToString+&quot;] has been raised.&lt;/h2&lt;hr&gt;&lt;div style='text-align:left' align = 'center'&gt;&lt;p&gt;&lt;b&gt;Hello Customer,&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Your query mail Is read By our support team And we would Like To acknowledge that we have received your request And a ticket has been created With an ID #[&quot;+ticket.ToString+&quot;]. One Of our representative will be reviewing your issue And it will be solved With In 1 hour&lt;/p&gt;&lt;p&gt;&lt;b&gt;Thank you&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;h5&gt;This Is auto generated mail so kindly dont replay For this mail.&lt;/h5&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Your Ticket with an ID #[&quot;+ticket.ToString+&quot;] has been raised!&quot;]" To="[mailMessage.From.ToString]">
-                  <ui:SendMail.Files>
-                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                  </ui:SendMail.Files>
-                </ui:SendMail>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Process  Mail" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process_Email.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="Body">[mailMessage.Headers("PlainText")]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Customer">[mailMessage.From.ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="TICKET">[ticket]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
+                <If Condition="[mailMessage.Subject.ToLower.Contains(&quot;id&quot;) or mailMessage.Subject.ToLower.Contains(&quot;name&quot;) or mailMessage.Subject.ToLower.Contains(&quot;customer&quot;)]" sap:VirtualizedContainerService.HintSize="752.8,516.8" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,367.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;body style = &quot;&quot;background-image:url('https://github.com/sanjaysanju618/Ticket-Assignment-Automation/blob/master/Ticket_Automation/WS/bg.png?raw=true');background-attachment: fixed;&quot;&quot; bgcolor='#D3D3D3'&gt;&lt;div style='box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px;background-color:white; border : solid; margin : 50px; padding : 20px;'&gt;&lt;h2&gt;Your ticket With an ID#[&quot;+ticket.ToString+&quot;] has been raised.&lt;/h2&lt;hr&gt;&lt;div style='text-align:left' align = 'center'&gt;&lt;p&gt;&lt;b&gt;Hello Customer,&lt;/b&gt;&lt;/p&gt;&lt;p&gt;We would Like To acknowledge that we have received your request And a ticket has been created With an ID #[&quot;+ticket.ToString+&quot;]. One Of our representative will be reviewing your issue And it will be solved With In 1 hour&lt;/p&gt;&lt;p&gt;&lt;b&gt;Thank you&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;h5&gt;This Is auto generated mail so kindly dont replay For this mail.&lt;/h5&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Your Ticket with an ID #[&quot;+ticket.ToString+&quot;] has been raised!&quot;]" To="[mailMessage.From.ToString]">
+                        <ui:SendMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                        </ui:SendMail.Files>
+                      </ui:SendMail>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Process  Mail" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process_Email.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="Body">[mailMessage.Headers("PlainText")]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Customer">[mailMessage.From.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="TICKET">[ticket]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;&lt;html&gt;&lt;body style = &quot;&quot;background-image:url('https://github.com/sanjaysanju618/Ticket-Assignment-Automation/blob/master/Ticket_Automation/WS/bg.png?raw=true');background-attachment: fixed;&quot;&quot; bgcolor='#D3D3D3'&gt;&lt;div style='box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px;background-color:white; border : solid; margin : 50px; padding : 20px;'&gt;&lt;h2&gt;Your ticket With an ID#[&quot;+ticket.ToString+&quot;] has been raised.&lt;/h2&lt;hr&gt;&lt;div style='text-align:left' align = 'center'&gt;&lt;p&gt;&lt;b&gt;Hello Customer,&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Your query mail Is read By our support team And we would Like To acknowledge that we have received your request And a ticket has been created With an ID #[&quot;+ticket.ToString+&quot;]. One Of our representative will be reviewing your issue And it will be solved With In 1 hour&lt;/p&gt;&lt;p&gt;&lt;b&gt;Thank you&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;h5&gt;This Is auto generated mail so kindly dont replay For this mail.&lt;/h5&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;]" DisplayName="Send SMTP Mail Message" Email="samplemailproduct@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="True" Password="Support@1234" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="We are sorry that we need your name,customer id." To="[mailMessage.From.ToString]">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                  </If.Else>
+                </If>
               </Sequence>
               <FlowStep.Next>
                 <x:Reference>__ReferenceID0</x:Reference>
