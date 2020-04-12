@@ -92,7 +92,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,134.02</av:Point>
           <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,202.82 300,232.82 300.2,232.82 300.2,246.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,202.82 300,232.82 302.6,232.82 302.6,246.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Read one email message" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -106,8 +106,8 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="483.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="MAIL_TRIGGER" />
-        <Assign DisplayName="Set Gmail email account" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="536,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="MAIL_TRIGGER" />
+        <Assign DisplayName="Set Gmail email account" sap:VirtualizedContainerService.HintSize="536,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
           </Assign.To>
@@ -115,38 +115,34 @@
             <InArgument x:TypeArguments="x:String">samplemailproduct@gmail.com</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:GetPassword DisplayName="Get password" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlEmm8Av2RkSAFq9jb8mPYAAAAAACAAAAAAAQZgAAAAEAACAAAACN9ToD7W5i3PszEXhs3PwTbXeaQyQSpWt2C8UB0rKtswAAAAAOgAAAAAIAACAAAACriYsV3yo6tdaiYdBZ6m5w0ezOfzXDVaDwMbHku/q2QxAAAADMR3r2B48en900O80X71PDQAAAAHNPcV7QTYROym27pGV96wTvBjMWq9EUseQVAqaIq6SrtddM17lTCaIr+eO8LmnJobV4eSuB0QIT6hMIbEYRqa8=" Result="[password]" />
-        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP mail messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[listGetGmail]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
-        <If Condition="[listGetGmail IsNot Nothing]" sap:VirtualizedContainerService.HintSize="483.2,302.4" sap2010:WorkflowViewState.IdRef="If_1">
+        <ui:GetPassword DisplayName="Get password" sap:VirtualizedContainerService.HintSize="536,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_2" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlEmm8Av2RkSAFq9jb8mPYAAAAAACAAAAAAAQZgAAAAEAACAAAACN9ToD7W5i3PszEXhs3PwTbXeaQyQSpWt2C8UB0rKtswAAAAAOgAAAAAIAACAAAACriYsV3yo6tdaiYdBZ6m5w0ezOfzXDVaDwMbHku/q2QxAAAADMR3r2B48en900O80X71PDQAAAAHNPcV7QTYROym27pGV96wTvBjMWq9EUseQVAqaIq6SrtddM17lTCaIr+eO8LmnJobV4eSuB0QIT6hMIbEYRqa8=" Result="[password]" />
+        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP mail messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="536,22.4" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[listGetGmail]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
+        <If Condition="[listGetGmail IsNot Nothing]" sap:VirtualizedContainerService.HintSize="536,212" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="snm:MailMessage">[mailMessage]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="snm:MailMessage">[listGetGmail.FirstOrDefault()]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </Sequence>
+            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="snm:MailMessage">[mailMessage]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="snm:MailMessage">[listGetGmail.FirstOrDefault()]</InArgument>
+              </Assign.Value>
+            </Assign>
           </If.Then>
+          <If.Else>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Waiting for Mail........" />
+          </If.Else>
         </If>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID2" Condition="[mailMessage is Nothing]" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID2" Condition="[mailMessage is Nothing]" DisplayName="Check Mail....." sap:VirtualizedContainerService.HintSize="75.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">265,246.5</av:Point>
-              <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+              <av:Size x:Key="ShapeSize">75.2,87.2</av:Size>
               <x:String x:Key="TrueLabel">No new email</x:String>
               <av:PointCollection x:Key="TrueConnector">265,290 140,290 140,385.5</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">335,290 450,290 450,394.5</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">340.2,290.1 450,290.1 450,394.5</av:PointCollection>
               <x:String x:Key="FalseLabel">Read one email</x:String>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -181,7 +177,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">550,428.9 580,428.9 580,168.42 400,168.42</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="794.4,914.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
