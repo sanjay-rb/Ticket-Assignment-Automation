@@ -1,4 +1,4 @@
-payment -HI I am Prathvik and I am a current user of your product. Recently I was trying to pay my bill but i didn't pay because it was showing for higher billing amounts. I ask you to please resolve my issue as soon as possible.
+payment - HI I am Sanjay and I am a current user of your product. Recently I was trying to pay my bill but i didn't pay because it was showing for higher billing amounts. I ask you to please resolve my issue as soon as possible.
 
 Billing: - I have been charged the incorrect amount for my internet usage. My contract states I have an allowance per month, but I am being charged daily for each separate connection to the internet.
 
