@@ -95,7 +95,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,202.82 300,232.82 302.6,232.82 302.6,246.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Read one email message" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Read one email message" sap:VirtualizedContainerService.HintSize="577.6,632" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="password" />
           <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listGetGmail" />
@@ -177,7 +177,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">550,428.9 580,428.9 580,168.42 400,168.42</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="794.4,914.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Check email message" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
